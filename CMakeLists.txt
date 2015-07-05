@@ -11,7 +11,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(SOURCE_FILES main.cpp)
 add_executable(BiaEngine ${SOURCE_FILES}
 core/graphics/Window.cpp core/graphics/Window.h
-core/util/Logger.h
+core/util/logger.h
+core/util/fileutil.h
 core/shapes/Triangle2f.cpp core/shapes/Triangle2f.h
 core/shapes/Rectangle2f.cpp core/shapes/Rectangle2f.h
 core/game/BiaGame.cpp core/game/BiaGame.h
@@ -21,7 +22,7 @@ core/math/vec2.h core/math/vec2.cpp
 core/math/vec3.h core/math/vec3.cpp
 core/math/vec4.h core/math/vec4.cpp
 core/math/mat4.cpp core/math/mat4.h
-core/math/maths.h)
+)
 
 if (UNIX)
 add_subdirectory(external/glfw)

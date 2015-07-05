@@ -10,7 +10,7 @@
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-#include "../util/Logger.h"
+#include "../util/logger.h"
 #include "../game/BiaGame.h"
 
 #define MAX_KEYS        1024
