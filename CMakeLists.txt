@@ -21,7 +21,7 @@ core/math/vec2.h core/math/vec2.cpp
 core/math/vec3.h core/math/vec3.cpp
 core/math/vec4.h core/math/vec4.cpp
 core/math/mat4.cpp core/math/mat4.h
-core/math/maths.h NewCppClass.cpp NewCppClass.h)
+core/math/maths.h)
 
 if (UNIX)
 add_subdirectory(external/glfw)
@@ -32,4 +32,13 @@ include_directories(
 )
 target_link_libraries(BiaEngine glfw ${GLFW_LIBRARIES})
 target_link_libraries(BiaEngine ${CMAKE_SOURCE_DIR}/external/glew/lib/libGLEW.a)
+elseif(WIN32)
+add_subdirectory(external/glfw)
+add_subdirectory(external/glew)
+include_directories(
+    external/glfw/include
+    external/glew/include
+)
+target_link_libraries(BiaEngine glfw ${GLFW_LIBRARIES})
+target_link_libraries(BiaEngine ${CMAKE_SOURCE_DIR}/external/glew/lib/Release/Win32/glew32.lib)
 endif (UNIX)
