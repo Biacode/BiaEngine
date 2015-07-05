@@ -25,7 +25,6 @@ namespace biaengine
             init();
         }
 
-
         BiaGame::~BiaGame()
         {
         }
