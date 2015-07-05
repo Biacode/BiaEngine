@@ -1,5 +1,8 @@
 //
-// Created by arthur on 6/30/15.
+// Created by Arthur Asatryan
+// Company: BiaCode
+// Date: 7/5/15
+// Copyright (c) 2015 BiaCode. All rights reserved.
 //
 
 #ifndef BIAENGINE_LOGGER_H

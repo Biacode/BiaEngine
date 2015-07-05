@@ -1,5 +1,8 @@
 //
-// Created by arthur on 6/30/15.
+// Created by Arthur Asatryan
+// Company: BiaCode
+// Date: 7/5/15
+// Copyright (c) 2015 BiaCode. All rights reserved.
 //
 
 #ifndef BIAENGINE_WINDOW_H
@@ -8,6 +11,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include "../util/Logger.h"
+#include "../game/BiaGame.h"
 
 #define MAX_KEYS        1024
 #define MAX_BUTTONS     32
@@ -23,11 +27,13 @@ namespace biaengine
             int _width, _height;
             GLFWwindow *_window;
 
+            biaengine::game::BiaGame *_game;
+
             bool _keys[MAX_KEYS];
             bool _mouseButtons[MAX_BUTTONS];
             double _mx, _my;
         public:
-            Window(const char *title, int width, int height);
+            Window(biaengine::game::BiaGame *game, const char *title, int width, int height);
 
             ~Window();
 

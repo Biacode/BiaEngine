@@ -5,10 +5,14 @@
 // Copyright (c) 2015 BiaCode. All rights reserved.
 //
 
-#include "TestGame.h"
+#ifndef BIAENGINE_NEWCPPCLASS_H
+#define BIAENGINE_NEWCPPCLASS_H
 
-int main()
+
+class NewCppClass
 {
-    TestGame testGame;
-    return 1;
-}
+
+};
+
+
+#endif //BIAENGINE_NEWCPPCLASS_H

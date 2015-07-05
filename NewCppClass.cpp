@@ -5,10 +5,4 @@
 // Copyright (c) 2015 BiaCode. All rights reserved.
 //
 
-#include "TestGame.h"
-
-int main()
-{
-    TestGame testGame;
-    return 1;
-}
+#include "NewCppClass.h"

@@ -1,8 +1,13 @@
 //
-// Created by arthur on 6/30/15.
+// Created by Arthur Asatryan
+// Company: BiaCode
+// Date: 7/5/15
+// Copyright (c) 2015 BiaCode. All rights reserved.
 //
 
 #include "Window.h"
+#include "../shapes/Rectangle2f.h"
+#include "../shapes/Triangle2f.h"
 
 namespace biaengine
 {
@@ -14,11 +19,12 @@ namespace biaengine
 
             void cursor_position_callback(GLFWwindow *window, double xpos, double ypos);
 
-            Window::Window(const char *title, int width, int height)
+            Window::Window(biaengine::game::BiaGame *game, const char *title, int width, int height)
             {
                 _title = title;
                 _width = width;
                 _height = height;
+                _game = game;
                 // initialize keys and mouse buttons
                 for (int i = 0; i < MAX_KEYS; i++)
                     _keys[i] = false;
@@ -56,6 +62,7 @@ namespace biaengine
                 while (!closed())
                 {
                     glfwPollEvents();
+                    _game->update();
                     glfwSwapBuffers(_window);
                 }
                 glfwTerminate();
@@ -63,6 +70,8 @@ namespace biaengine
 
             void Window::update() const
             {
+                using namespace biaengine::shapes;
+
                 double x, y;
                 if (isMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT))
                 {
