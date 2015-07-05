@@ -22,7 +22,7 @@ core/math/vec2.h core/math/vec2.cpp
 core/math/vec3.h core/math/vec3.cpp
 core/math/vec4.h core/math/vec4.cpp
 core/math/mat4.cpp core/math/mat4.h
-)
+core/graphics/Shader.cpp core/graphics/Shader.h)
 
 if (UNIX)
 add_subdirectory(external/glfw)
@@ -31,6 +31,7 @@ include_directories(
     external/glfw/include
     external/glew/include
 )
+install(DIRECTORY core/shaders/ DESTINATION shaders)
 target_link_libraries(BiaEngine glfw ${GLFW_LIBRARIES})
 target_link_libraries(BiaEngine ${CMAKE_SOURCE_DIR}/external/glew/lib/libGLEW.a)
 elseif(WIN32)
@@ -40,6 +41,7 @@ include_directories(
     external/glfw/include
     external/glew/include
 )
+install(DIRECTORY core/shaders/ DESTINATION shaders)
 target_link_libraries(BiaEngine glfw ${GLFW_LIBRARIES})
 target_link_libraries(BiaEngine ${CMAKE_SOURCE_DIR}/external/glew/lib/Release/Win32/glew32.lib)
 endif (UNIX)
